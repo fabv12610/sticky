@@ -8,14 +8,15 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2024-06-12 13:48+0100\n"
-"PO-Revision-Date: 2025-09-11 17:19+0000\n"
+"PO-Revision-Date: 2025-12-25 12:12+0000\n"
 "Last-Translator: Klavs Petersons <Unknown>\n"
 "Language-Team: Latvian <lv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2025-12-12 13:33+0000\n"
-"X-Generator: Launchpad (build 379e22b8475e3402088a4cdb4a6e7936a4d28414)\n"
+"X-Launchpad-Export-Date: 2026-01-08 15:44+0000\n"
+"X-Generator: Launchpad (build 99c00f518760bdd50fc6e353e7736d2fff8fba4a)\n"
+"Language: lv\n"
 
 #: usr/lib/sticky/common.py:150 usr/lib/sticky/manager.py:300
 msgid "Export..."
@@ -78,7 +79,7 @@ msgstr "Noņemt grupu"
 #: usr/lib/sticky/common.py:279
 #, python-format
 msgid "Are you sure you want to remove the group %s?"
-msgstr "Vai tiešām vēlaties noņemt grupu %s?"
+msgstr "Vai tiešām vēlies noņemt grupu %s?"
 
 #: usr/lib/sticky/common.py:331
 msgid "OK"
@@ -171,7 +172,7 @@ msgstr "Dzeltens"
 
 #: usr/lib/sticky/sticky.py:58
 msgid "Purple"
-msgstr "Purpursarkans"
+msgstr "Violets"
 
 #: usr/lib/sticky/sticky.py:59
 msgid "Teal"
@@ -183,7 +184,7 @@ msgstr "Oranžs"
 
 #: usr/lib/sticky/sticky.py:61
 msgid "Magenta"
-msgstr "Fuksīnsarkans"
+msgstr "Purpursarkans"
 
 #: usr/lib/sticky/sticky.py:76
 msgid "Operations"
@@ -343,7 +344,7 @@ msgstr "Vienmēr augšpusē"
 
 #: usr/lib/sticky/sticky.py:547
 msgid "Are you sure you want to remove this note?"
-msgstr "Vai tiešām vēlaties noņemt šo piezīmi?"
+msgstr "Vai tiešām vēlies noņemt šo piezīmi?"
 
 #: usr/lib/sticky/sticky.py:607
 msgid "Show notes on all desktops"
@@ -414,8 +415,8 @@ msgstr "stundas"
 #: usr/lib/sticky/sticky.py:641
 msgid "Set this to zero if you wish to keep all backups indefinitely"
 msgstr ""
-"Iestatiet šo uz nulli, ja vēlaties saglabāt visus rezerves kopijas uz "
-"nenoteiktu laiku"
+"Iestati šo uz nulli, ja vēlies saglabāt visus rezerves kopijas uz nenoteiktu "
+"laiku"
 
 #: usr/lib/sticky/sticky.py:642
 msgid "Number to keep"
@@ -446,8 +447,8 @@ msgid ""
 "Would you like to import your notes from Gnote? This will not change your "
 "Gnote notes in any way."
 msgstr ""
-"Vai vēlaties importēt savas piezīmes no Gnote? Tas nekādā veidā nemainīs "
-"jūsu Gnote piezīmes."
+"Vai vēlies importēt savas piezīmes no Gnote? Tas nekādā veidā nemainīs tavas "
+"Gnote piezīmes."
 
 #: usr/lib/sticky/sticky.py:875
 msgid "Group 1"
@@ -471,7 +472,7 @@ msgstr "Iziet"
 
 #: usr/lib/sticky/sticky.py:1158 usr/share/sticky/manager.ui.h:2
 msgid "Take notes and stay organized"
-msgstr "Veiciet piezīmes un saglabājiet organizētību"
+msgstr "Veic piezīmes un saglabā organizētību"
 
 #: usr/lib/sticky/util.py:79
 msgid "Unfiled"

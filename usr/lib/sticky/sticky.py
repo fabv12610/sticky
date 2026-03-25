@@ -693,6 +693,7 @@ class Application(Gtk.Application):
         self.notes_hidden = False
         self.autostart_mode = False # indicates if we're in autostart mode
         self.dbus_register_id = 0
+        self.group_buttons = {}
 
         self.add_main_option(
             'autostart',
@@ -776,7 +777,7 @@ class Application(Gtk.Application):
 
         self.settings.connect('changed::show-in-tray', self.update_tray_icon)
         self.settings.connect('changed::show-in-taskbar', self.update_dummy_window)
-        self.settings.connect('changed::active-group', self.on_active_group_changed)
+        self.active_group_changed_id = self.settings.connect('changed::active-group', self.on_active_group_changed)
         self.update_dummy_window()
 
         self.note_group = self.settings.get_string('active-group')
@@ -904,6 +905,8 @@ class Application(Gtk.Application):
         if self.status_icon is None:
             return
 
+        self.group_buttons = {}
+
         self.context_menu = Gtk.Menu()
         item = Gtk.MenuItem(label=_("New Note"))
         item.connect('activate', self.new_note)
@@ -915,13 +918,21 @@ class Application(Gtk.Application):
 
         self.context_menu.append(Gtk.SeparatorMenuItem())
 
+        last_item = None
         for group in self.file_handler.get_note_group_names():
             item = Gtk.RadioMenuItem(label=group)
+
+            if last_item is not None:
+                item.join_group(last_item)
+
             if group == self.settings.get_string('active-group'):
                 item.set_active(True)
-            else:
-                item.connect('activate', self.on_tray_group_selected, group)
+
+            last_item = item
+
+            item.connect('activate', self.on_tray_group_selected, group)
             self.context_menu.append(item)
+            self.group_buttons[group] = item
 
         self.context_menu.append(Gtk.SeparatorMenuItem())
 
@@ -954,6 +965,12 @@ class Application(Gtk.Application):
         self.settings.set_string('active-group', name)
 
     def on_active_group_changed(self, settings, key):
+        group = settings.get_string('active-group')
+        if self.status_icon and not self.group_buttons[group].get_active():
+            self.settings.disconnect(self.active_group_changed_id)
+            self.group_buttons[group].set_active(True)
+            self.active_group_changed_id = self.settings.connect('changed::active-group', self.on_active_group_changed)
+
         self.change_visible_note_group()
 
     def update_dummy_window(self, *args):
